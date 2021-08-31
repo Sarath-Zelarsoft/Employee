@@ -42,8 +42,6 @@ const Listemployees = () => {
         <thead>
           <tr>
             <th>employee</th>
-            <th>Edit employee Information</th>
-            <th>Delete employee Information</th>
           </tr>
         </thead>
         <tbody>
@@ -52,9 +50,6 @@ const Listemployees = () => {
             <td>{employee.name}</td>
             <td>
               <Editemployee employee={employee} />
-            </td>
-            <td>
-              <button className="btn btn-light" onClick={() => deleteemployee(employee.employee_id)}>Delete employee</button>
             </td>
           </tr>
           ))}

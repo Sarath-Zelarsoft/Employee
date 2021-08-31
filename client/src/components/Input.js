@@ -28,14 +28,8 @@ const Input = () => {
   <Fragment>
       {" "}
       <br />
-      <h2 align="center">employee Register</h2>
+      <h2 align="center">Employees Data</h2>
       <br></br>
-      <form align="center" onSubmit={onSubmitForm}>
-          <input type="text" placeholder="Enter employee name" value={name}
-          onChange={(e) => setName(e.target.value)}>
-          </input>
-          <button>Add employee</button>
-      </form>
   </Fragment>
   );
 };

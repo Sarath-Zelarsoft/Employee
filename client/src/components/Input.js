@@ -1,3 +1,4 @@
+
 import React, { Fragment, useState } from 'react';
 
 
@@ -6,11 +7,11 @@ const Input = () => {
     const [name, setName] = useState("");
 
     const onSubmitForm = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
       try {
-          
+
           const body = { name };
-          await fetch("http://54.146.243.36:5000/employee.js", {
+          await fetch("http://172.31.30.28:5000/employee.js", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body)
@@ -18,8 +19,8 @@ const Input = () => {
 
           window.location = "/";
 
-    
-         
+
+
       } catch (error) {
           console.error(error.message)
       }
@@ -32,7 +33,7 @@ const Input = () => {
       <h2 align="center">employee Register</h2>
       <br></br>
       <form align="center" onSubmit={onSubmitForm}>
-          <input type="text" placeholder="Enter employee name" value={name} 
+          <input type="text" placeholder="Enter employee name" value={name}
           onChange={(e) => setName(e.target.value)}>
           </input>
           <button>Add employee</button>

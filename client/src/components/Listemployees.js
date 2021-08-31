@@ -1,60 +1,60 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import Editemployees from './Editemployees';
+import Editemployee from './Editemployee';
 
 const Listemployees = () => {
   const [employees, setemployees] = useState([]);
 
-  
+
   const getemployees = async() => {
     try {
 
-      const response = await fetch("http://54.146.243.36:5000/employees");
+      const response = await fetch("http://172.31.30.28:5000/employee");
       console.log(response);
       const jsonData = await response.json();
 
       setemployees(jsonData);
-      
+
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  const deleteemployees = async (id) => {
+  const deleteemployee = async (id) => {
     try {
-      const deleteemployees = await fetch(`hhttp://54.146.243.36:5000/delete/${id}`, {
+      const deleteemployee = await fetch(`hhttp://172.31.30.28:5000/delete/${id}`, {
         method: "DELETE"
       });
 
-      setemployees(employees.filter(employees => employees.employee_id !== id))
-      console.log(deleteemployees);
+      setemployees(employees.filter(employee => employee.employee_id !== id))
+      console.log(deleteemployee);
     } catch (err) {
-      console.errror(err.message) 
+      console.errror(err.message)
     }
   }
-    
+
   useEffect(() => {
     getemployees();
   }, []);
 
-    return  ( 
-    <Fragment>        
+    return  (
+    <Fragment>
       <table className="table mt-6 text-center">
         <thead>
           <tr>
             <th>employee</th>
-            <th>Edit employees Information</th>
-            <th>Delete employees Information</th>
+            <th>Edit employee Information</th>
+            <th>Delete employee Information</th>
           </tr>
-        </thead> 
+        </thead>
         <tbody>
-          {employees.map((employees) => (
-          <tr key={employees.employees_id}>
-            <td>{employees.name}</td>
+          {employees.map((employee) => (
+          <tr key={employee.employee_id}>
+            <td>{employee.name}</td>
             <td>
-              <Editemployees employees={employees} />
+              <Editemployee employee={employee} />
             </td>
             <td>
-              <button className="btn btn-light" onClick={() => deleteemployees(employees.employees_id)}>Delete employees</button>
+              <button className="btn btn-light" onClick={() => deleteemployee(employee.employee_id)}>Delete employee</button>
             </td>
           </tr>
           ))}

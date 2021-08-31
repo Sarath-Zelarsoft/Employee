@@ -1,15 +1,15 @@
 import React, { Fragment , useState } from 'react';
 
-const Editemployees = ({employees}) => {
-  console.log(employees);
-  const [name, setName] = useState(employees.name);
+const Editemployee = ({employee}) => {
+  console.log(employee);
+  const [name, setName] = useState(employee.name);
 
 
   const changeName = async e => {
     e.preventDefault();
     try {
       const body = { name };
-      const response = await fetch(`http://54.146.243.36:5000/update/${employees.employees_id}`, {
+      const response = await fetch(`http://172.31.30.28:5000/update/${employee.employee_id}`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
@@ -31,19 +31,19 @@ const Editemployees = ({employees}) => {
         type="button"
         className = "btn btn info"
         data-toggle="modal"
-        data-target={`#id${employees.employees_id}`}>
+        data-target={`#id${employee.employee_id}`}>
         Edit employee
         </button>
-      <div className="modal" id={`id${employees.employees_id}`} onClick={() => setName(employees.name)}>
+      <div className="modal" id={`id${employee.employee_id}`} onClick={() => setName(employee.name)}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h4 className="modal-title">Edit employees Information</h4>
+              <h4 className="modal-title">Edit employee Information</h4>
               <button
                 type="button"
                 className="close"
                 data-dismiss="modal"
-                onClick={() => setName(employees.name)}>&times;</button>
+                onClick={() => setName(employee.name)}>&times;</button>
             </div>
             <div className="modal-body">
               <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
@@ -63,4 +63,4 @@ const Editemployees = ({employees}) => {
   );
 };
 
-export default Editemployees;
+export default Editemployee;

@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState } from 'react';
 
 
@@ -11,7 +10,7 @@ const Input = () => {
       try {
 
           const body = { name };
-          await fetch("http://172.31.30.28:5000/db.js", {
+          await fetch("http://54.146.243.36:5000/add", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body)

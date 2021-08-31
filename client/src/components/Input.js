@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
 
-
 const Input = () => {
 
     const [name, setName] = useState("");

@@ -9,7 +9,7 @@ const Input = () => {
       try {
 
           const body = { name };
-          await fetch("http://54.146.243.36:5000/add", {
+          await fetch("http://23.21.38.180:5000/add", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body)

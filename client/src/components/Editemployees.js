@@ -1,8 +1,8 @@
 import React, { Fragment , useState } from 'react';
 
-const Editemployee = ({employee}) => {
-  console.log(employee);
-  const [name, setName] = useState(employee.name);
+const Editemployees = ({employees}) => {
+  console.log(employees);
+  const [name, setName] = useState(employees.name);
 
 
   const changeName = async e => {
@@ -31,19 +31,19 @@ const Editemployee = ({employee}) => {
         type="button"
         className = "btn btn info"
         data-toggle="modal"
-        data-target={`#id${employee.employee_id}`}>
+        data-target={`#id${employees.employees_id}`}>
         Edit employee
         </button>
-      <div className="modal" id={`id${employee.employee_id}`} onClick={() => setName(employee.name)}>
+      <div className="modal" id={`id${employees.employees_id}`} onClick={() => setName(employees.name)}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h4 className="modal-title">Edit employee Information</h4>
+              <h4 className="modal-title">Edit employees Information</h4>
               <button
                 type="button"
                 className="close"
                 data-dismiss="modal"
-                onClick={() => setName(employee.name)}>&times;</button>
+                onClick={() => setName(employees.name)}>&times;</button>
             </div>
             <div className="modal-body">
               <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
@@ -63,4 +63,4 @@ const Editemployee = ({employee}) => {
   );
 };
 
-export default Editemployee;
+export default Editemployees;

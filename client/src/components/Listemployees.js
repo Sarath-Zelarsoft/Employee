@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import Editemployee from './Editemployee';
+import Editemployees from './Editemployees';
 
 const Listemployees = () => {
   const [employees, setemployees] = useState([]);

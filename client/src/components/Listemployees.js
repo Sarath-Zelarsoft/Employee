@@ -29,7 +29,7 @@ const Listemployees = () => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Employee</th>
+            <th>Employee Name</th>
           </tr>
         </thead>
         <tbody>

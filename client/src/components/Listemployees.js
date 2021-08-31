@@ -54,7 +54,7 @@ const Listemployees = () => {
               <Editemployees employees={employees} />
             </td>
             <td>
-              <button className="btn btn-light" onClick={() => deleteemployees(employee.employee_id)}>Delete employee</button>
+              <button className="btn btn-light" onClick={() => deleteemployees(employees.employees_id)}>Delete employees</button>
             </td>
           </tr>
           ))}

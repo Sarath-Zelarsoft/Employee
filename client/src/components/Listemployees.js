@@ -41,16 +41,15 @@ const Listemployees = () => {
       <table className="table mt-6 text-center">
         <thead>
           <tr>
-            <th>employee</th>
+            <th>ID</th>
+            <th>Employee</th>
           </tr>
         </thead>
         <tbody>
           {employees.map((employee) => (
           <tr key={employee.employee_id}>
+            <td>{employee.id}</td>
             <td>{employee.name}</td>
-            <td>
-              <Editemployee employee={employee} />
-            </td>
           </tr>
           ))}
         </tbody>

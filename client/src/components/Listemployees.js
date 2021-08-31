@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import Editemployee from './Editemployee';
+import Editemployees from './Editemployees';
 
 const Listemployees = () => {
   const [employees, setemployees] = useState([]);
@@ -8,7 +8,7 @@ const Listemployees = () => {
   const getemployees = async() => {
     try {
 
-      const response = await fetch("http://54.146.243.36:5000/employee");
+      const response = await fetch("http://54.146.243.36:5000/employees");
       console.log(response);
       const jsonData = await response.json();
 
@@ -19,14 +19,14 @@ const Listemployees = () => {
     }
   };
 
-  const deleteemployee = async (id) => {
+  const deleteemployees = async (id) => {
     try {
-      const deleteemployee = await fetch(`hhttp://54.146.243.36:5000/delete/${id}`, {
+      const deleteemployees = await fetch(`hhttp://54.146.243.36:5000/delete/${id}`, {
         method: "DELETE"
       });
 
-      setemployees(employees.filter(employee => employee.employee_id !== id)) 
-      console.log(deleteemployee);
+      setemployees(employees.filter(employees => employees.employee_id !== id))
+      console.log(deleteemployees);
     } catch (err) {
       console.errror(err.message) 
     }
@@ -42,19 +42,19 @@ const Listemployees = () => {
         <thead>
           <tr>
             <th>employee</th>
-            <th>Edit employee Information</th>
-            <th>Delete employee Information</th>
+            <th>Edit employees Information</th>
+            <th>Delete employees Information</th>
           </tr>
         </thead> 
         <tbody>
-          {employees.map((employee) => (
-          <tr key={employee.employee_id}>
-            <td>{employee.name}</td>
+          {employees.map((employees) => (
+          <tr key={employees.employees_id}>
+            <td>{employees.name}</td>
             <td>
-              <Editemployee employee={employee} />
+              <Editemployees employees={employees} />
             </td>
             <td>
-              <button className="btn btn-light" onClick={() => deleteemployee(employee.employee_id)}>Delete employee</button> 
+              <button className="btn btn-light" onClick={() => deleteemployees(employee.employee_id)}>Delete employee</button>
             </td>
           </tr>
           ))}

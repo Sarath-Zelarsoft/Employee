@@ -11,7 +11,7 @@ const Input = () => {
       try {
 
           const body = { name };
-          await fetch("http://172.31.30.28:5000/employee.js", {
+          await fetch("http://172.31.30.28:5000/db.js", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body)

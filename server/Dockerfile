@@ -5,3 +5,4 @@ COPY    package.json /data
 COPY    . /data
 RUN     npm install pg
 CMD     ["node","api.js:run"]
+EXPOSE  5000

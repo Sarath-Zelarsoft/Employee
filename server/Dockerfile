@@ -1,5 +1,7 @@
 FROM    node as build step
-RUN     mkdir -p /app/src
-COPY    src src
-COPY    package.json .
+RUN     apk add --no-cache nodejs npm
+RUN     mkdir /data
+COPY    package.json /data
+COPY    . /data
+RUN     npm install pg
 CMD     ["node","api.js:run"]

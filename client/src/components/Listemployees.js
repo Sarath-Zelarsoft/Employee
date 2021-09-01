@@ -8,7 +8,7 @@ const Listemployees = () => {
   const getemployees = async() => {
     try {
 
-      const response = await fetch("http://3.93.174.113:5000/employee");
+      const response = await fetch("http://54.167.121.27:5000/employee");
       console.log(response);
       const jsonData = await response.json();
 
@@ -35,8 +35,8 @@ const Listemployees = () => {
         <tbody>
           {employees.map((employee) => (
           <tr key={employee.employee_id}>
-            <td>{employee.id}</td>
-            <td>{employee.name}</td>
+            <td>{employee.ID}</td>
+            <td>{employee.Name}</td>
           </tr>
           ))}
         </tbody>

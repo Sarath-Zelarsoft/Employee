@@ -1,4 +1,4 @@
-FROM    node:12-alpine as build step
+FROM    node:12-alpine
 RUN     apk add --no-cache nodejs npm
 RUN     mkdir /data
 COPY    package.json /data

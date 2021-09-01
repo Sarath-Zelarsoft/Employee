@@ -7,10 +7,10 @@ import Listemployees from './components/Listemployees';
 function App() {
   return ( <Fragment>
     <div className="App-header">
-    <Input />
-    <br />
-    <br />
-    <Listemployees />
+      <Input />
+      <br />
+      <br />
+      <Listemployees />
     </div>
   </Fragment>
   );

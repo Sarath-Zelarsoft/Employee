@@ -28,7 +28,7 @@ const Input = () => {
   <Fragment>
       {" "}
       <br />
-      <h2 align="center">Employees Data</h2>
+      <h2 align="center">Employee Table</h2>
       <br></br>
   </Fragment>
   );

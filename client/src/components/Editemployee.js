@@ -9,7 +9,7 @@ const Editemployee = ({employee}) => {
     e.preventDefault();
     try {
       const body = { name };
-      const response = await fetch(`http://23.21.38.180:5000/update/${employee.employee_id}`, {
+      const response = await fetch(`http://54.167.121.27:5000/update/${employee.ID}`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
@@ -31,10 +31,10 @@ const Editemployee = ({employee}) => {
         type="button"
         className = "btn btn info"
         data-toggle="modal"
-        data-target={`#id${employee.employee_id}`}>
+        data-target={`#id${employee.ID}`}>
         Edit employee
         </button>
-      <div className="modal" id={`id${employee.employee_id}`} onClick={() => setName(employee.name)}>
+      <div className="modal" id={`id${employee.ID}`} onClick={() => setName(employee.name)}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
